@@ -1,0 +1,50 @@
+/* 
+Variables CSS / Custom properties
+super-azul: #72c0c0
+*/
+/* El punto mas alto del documento */
+:root{
+
+    /* 
+    Declara las variables
+    Darles un nombre y su contenido
+    Las declaramos en la raiz/root para que existan en todo el documento */
+    --azul: #72c0c0;
+    --naranja: #F90;
+    --negro: #000;
+    --blanco: #FFF;
+
+}
+body{
+    background-color: var(--negro);
+    background-image: url(images/pattern.jpg);
+/*
+repeat(default)/ no repeat/ repeat-x / repeat -y/
+backround-reeat:mask-repeat: 
+imagen grande que cubre todo el fondo
+backgroun-size:cover;
+ */
+ font-family: :Arial, Helvetica, sans-serif;
+
+
+/* h1{
+    background-color: var(--blanco);
+    color: var(--azul);
+} */
+/* 
+Si separamos varios selectores con, les las mismas propiedades a esos selectores
+*/
+.cabecera, . contenedor {
+    max-width: 1000px;
+    margin: auto;
+}
+.cabecera {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    color: var(--naranja);
+}
+.contendero { 
+    background-color: var(--blanco);
+}
