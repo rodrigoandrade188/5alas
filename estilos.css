@@ -34,6 +34,7 @@ backgroun-size:cover;
 /* 
 Si separamos varios selectores con, les las mismas propiedades a esos selectores
 */
+}    
 .cabecera, . contenedor {
     max-width: 1000px;
     margin: auto;
