@@ -10,7 +10,8 @@ super-azul: #72c0c0
     Darles un nombre y su contenido
     Las declaramos en la raiz/root para que existan en todo el documento */
     --azul: #72c0c0;
-    --naranja: #F90;
+    --naranja: #FE6F0F;
+    --amarillo: #f8c009;
     --negro: #000;
     --blanco: #FFF;
 
@@ -24,7 +25,7 @@ backround-reeat:mask-repeat:
 imagen grande que cubre todo el fondo
 backgroun-size:cover;
  */
- font-family: :Arial, Helvetica, sans-serif;
+ font-family: Arial, Helvetica, sans-serif;
 
 
 /* h1{
@@ -34,9 +35,10 @@ backgroun-size:cover;
 /* 
 Si separamos varios selectores con, les las mismas propiedades a esos selectores
 */
-.cabecera, . contenedor {
+}
+.cabecera, .contenedor {
     max-width: 1000px;
-    margin: auto;
+    margin:auto; 
 }
 .cabecera {
     display:flex;
@@ -45,6 +47,43 @@ Si separamos varios selectores con, les las mismas propiedades a esos selectores
     padding: 5px 0;
     color: var(--naranja);
 }
-.contendero { 
+.contenedor { 
     background-color: var(--blanco);
+    border-radius: 10px 10ox 0 0;
 }
+/* 
+ -----------Navegacion--------------
+*/
+.nav{
+    background-color: var(--naranja);
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+    border-radius: 10px 10px 0 0;
+    max-width: 1000px;
+    margin:auto; 
+}
+.nav-lista,
+.nav-form {
+    flex-grow: 1;  
+}
+.nav-lista {
+    list-style: none;
+    display: flex;  
+}
+.nav-lista_item-link {
+    display: block;
+    padding: 4px 8px;
+    border-right: 1px solid var(--amarillo);
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--blanco)
+}
+.nav-lista_item-link:hover {
+    text-decoration: underline;
+}
+.nav-form {
+    display: flex;
+    justify-content: flex-end;
+}
+
