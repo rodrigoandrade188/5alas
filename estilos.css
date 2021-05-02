@@ -14,6 +14,7 @@ super-azul: #72c0c0
     --amarillo: #f8c009;
     --negro: #000;
     --blanco: #FFF;
+    --espacio:20px;
 
 }
 body{
@@ -49,7 +50,7 @@ Si separamos varios selectores con, les las mismas propiedades a esos selectores
 }
 .contenedor { 
     background-color: var(--blanco);
-    border-radius: 10px 10ox 0 0;
+    border-radius: 10px 10px 0 0;
 }
 /* 
  -----------Navegacion--------------
@@ -62,6 +63,8 @@ Si separamos varios selectores con, les las mismas propiedades a esos selectores
     border-radius: 10px 10px 0 0;
     max-width: 1000px;
     margin:auto; 
+    /* Separar entre la botonera y lo que este abajo */
+    margin-bottom: 20px;
 }
 .nav-lista,
 .nav-form {
@@ -85,4 +88,44 @@ Si separamos varios selectores con, les las mismas propiedades a esos selectores
 .nav-form {
     display: flex;
     justify-content: flex-end;
+}
+/* Slider de imagenes */
+.slider {
+    /* Si quiero centrar una imagen sola puedo usar text-align:center; en el elemento padre */
+    text-align: center;
+    margin: auto;
+       /* Separar entre el slider y el bloque de abajo */
+    margin-bottom: 20px; 
+  
+}
+/*
+ ----------------Principal-------------------- 
+ */
+.principal{
+    background-color: mediumorchid;
+    padding: 10px;
+    padding-left: 20px;
+    max-width: 1000px;
+    margin:auto; 
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    padding: --espacio;
+    padding-top: 0;
+
+    margin-bottom: 100px;
+ }
+ .principal-categorias {
+    background-color: salmon;
+}
+
+.principal-productos{
+    background-color: skyblue;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacio);
+}
+.producto{
+    background-color: steelblue;
+    
+
 }
