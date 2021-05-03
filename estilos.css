@@ -1,131 +1,242 @@
-/* 
-Variables CSS / Custom properties
-super-azul: #72c0c0
+/*
+    Variables CSS / Custom properties
+    super-azul: #72c0c0
 */
-/* El punto mas alto del documento */
-:root{
 
-    /* 
-    Declara las variables
-    Darles un nombre y su contenido
-    Las declaramos en la raiz/root para que existan en todo el documento */
-    --azul: #72c0c0;
+/* El punto más alto del documento */
+:root {
+    /* Declara las variables
+        Darles un nombre y su contenido
+        Las declaramos en la raíz / root para que existan en todo el documento
+    */
+    --azul: #02c2c2;
     --naranja: #FE6F0F;
     --amarillo: #f8c009;
     --negro: #000;
     --blanco: #FFF;
-    --espacio:20px;
-
+    --gris: #F0F0F0;
+    --espacio: 30px;
 }
-body{
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Utilizamos la variable con var() */
     background-color: var(--negro);
     background-image: url(images/pattern.jpg);
+    /*
+    repeat (default) | no-repeat | repeat-x | repeat-y
+    background-repeat: repeat;
+    Imagen grande que cubre todo el fondo
+    background-size: cover;
+    */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /*
-repeat(default)/ no repeat/ repeat-x / repeat -y/
-backround-reeat:mask-repeat: 
-imagen grande que cubre todo el fondo
-backgroun-size:cover;
- */
- font-family: Arial, Helvetica, sans-serif;
-
-
-/* h1{
+h1 {
     background-color: var(--blanco);
     color: var(--azul);
-} */
-/* 
-Si separamos varios selectores con, les las mismas propiedades a esos selectores
-*/
 }
+*/
+
+/*
+    Si separamos varios selectores con , les aplicamos las mismas propiedades a esos selectores
+*/
 .cabecera, .contenedor {
     max-width: 1000px;
-    margin:auto; 
+    margin: auto;
 }
+
 .cabecera {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 5px 0;
     color: var(--naranja);
 }
-.contenedor { 
+
+.contenedor {
     background-color: var(--blanco);
+    /* Agregamos border-radius también al contenedor para que no se vea la esquina blanca */
     border-radius: 10px 10px 0 0;
 }
-/* 
- -----------Navegacion--------------
+
+/*
+    -------------- Navegación --------------
 */
-.nav{
+
+.nav {
     background-color: var(--naranja);
     padding: 10px;
-    padding-left: 20px;
+    padding-left: 45px;
     display: flex;
     border-radius: 10px 10px 0 0;
-    max-width: 1000px;
-    margin:auto; 
-    /* Separar entre la botonera y lo que este abajo */
+
+    /* Separar entre la botonera y lo que esté abajo */
     margin-bottom: 20px;
 }
+
 .nav-lista,
 .nav-form {
-    flex-grow: 1;  
+    flex-grow: 1;
 }
+
 .nav-lista {
     list-style: none;
-    display: flex;  
+    display: flex;
 }
+/* .input::placeholder */
 .nav-lista_item-link {
     display: block;
     padding: 4px 8px;
     border-right: 1px solid var(--amarillo);
     text-decoration: none;
     font-weight: bold;
-    color: var(--blanco)
+    color: var(--blanco);
 }
 .nav-lista_item-link:hover {
     text-decoration: underline;
 }
+
 .nav-form {
     display: flex;
     justify-content: flex-end;
 }
-/* Slider de imagenes */
-.slider {
-    /* Si quiero centrar una imagen sola puedo usar text-align:center; en el elemento padre */
-    text-align: center;
-    margin: auto;
-       /* Separar entre el slider y el bloque de abajo */
-    margin-bottom: 20px; 
-  
-}
+
 /*
- ----------------Principal-------------------- 
- */
-.principal{
+    -------------- Slider de imágenes --------------
+*/
+
+.slider {
+    /* Si quiero centrar una imagen sola puedo usar text-align: center; en el elemento padre */
+    text-align: center;
+
+    /* Separo entre el slider y el bloque de abajo */
+    margin-bottom: 20px;
+}
+
+/*
+    -------------- Principal --------------
+*/
+.principal {
     background-color: mediumorchid;
-    padding: 10px;
-    padding-left: 20px;
-    max-width: 1000px;
-    margin:auto; 
     display: grid;
     grid-template-columns: 250px 1fr;
-    padding: --espacio;
-    padding-top: 0;
+    padding: 0 var(--espacio);
 
-    margin-bottom: 100px;
- }
- .principal-categorias {
-    background-color: salmon;
+    margin-bottom: 40px;
 }
 
-.principal-productos{
+.principal-categorias {
+    background-color: salmon;
+}
+.principal-productos {
     background-color: skyblue;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--espacio);
 }
-.producto{
-    background-color: steelblue;
-    
 
+.producto {
+    background-color: steelblue;
+}
+
+.opcion1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.opcion1-titulo {
+    /* Ocupa desde el comienzo hasta el fin de la grilla */
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+}
+
+.opcion2-titulo {
+    margin-bottom: 10px;
+}
+.opcion2-contenedor {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.producto-texto {
+    font-size: 14px;
+}
+
+/* ---------------- Newsletter ---------------- */
+.news {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 940px;
+
+    background-color: pink;
+    border-radius: 6px;
+    border: 1px solid var(--negro);
+    padding: 10px 40px;
+
+    /*
+        Los colores van separados por coma
+        Puedo modificar la cantidad de cada color (70%)
+    */
+    background-image: linear-gradient(var(--blanco) 70%, grey) ;
+}
+
+.news-texto {
+    flex-grow: 1;
+    padding-left: 40px;
+}
+.news-texto p {
+    padding-left: 40px;
+}
+
+.news-form_boton {
+    background: none;
+    border: none;
+    font-weight: bold;
+
+    /* Retomamos el cursor perdido con pointer (manito) */
+    cursor: pointer;
+}
+.news-form_boton:hover {
+    text-decoration: underline;
+    color: var(--naranja);
+}
+
+/* ---------------- Footer -------------------- */
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    background-color: var(--gris);
+    border-top: 1px solid var(--negro);
+}
+
+.footer-hong,
+.footer-arg {
+    /* Eliminar el italic predeterminado de la etiqueta address */
+    font-style: normal;
+}
+
+.footer-hong {
+    border-right: 1px solid var(--negro);
+    padding-right: 30px;
+}
+
+.footer-creditos {
+    grid-column: 1 / -1;
+    text-align: right;
 }
